@@ -41,19 +41,20 @@
                     <b-col cols="12" md="4">
                         <b-form-group id="input-group-4" label-for="input-4">
                             <b-form-select v-model="regionSeleccionada">
-                            <option v-for="option in regiones" v-bind:value="option" :key="index">
+                            <option v-for="option in regiones" v-bind:value="option" :key="option.id">
                                 {{ option.region }}
                             </option>
                             </b-form-select>
                         </b-form-group>
                     </b-col>
                     <b-col cols="12" md="4">
-                        <b-form-group id="input-group-4" label-for="input-4">
-                            <b-form-select  v-model="form.comunaSeleccionada">
-                            <option v-for="option in regionSeleccionada.comunas" v-bind:value="option.region" :key="index">
-                                {{ option }}
-                            </option>
-                            </b-form-select>
+                        <b-form-group v-model="form.comunaSeleccionada" id="input-group-3" label-for="input-3">
+                            <b-form-select
+                            id="input-3"
+                            v-model="form.comunaSeleccionada"
+                            :options="regionSeleccionada.comunas"
+                            required
+                            ></b-form-select>
                         </b-form-group>
                     </b-col>
                 </b-row>
@@ -84,7 +85,7 @@ export default {
             genero: null,
             region: null,
             regionSeleccionada: '',
-            comunaSeleccionada: ''
+            comunaSeleccionada: null
             },
             generos: [{text: 'Selecciona tu sexo', value: null},'Hombre', 'Mujer','Ninguno']
         }
