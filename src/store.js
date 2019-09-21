@@ -105,12 +105,44 @@ const emergencias = [
       "cantidadVoluntarios": 90,
       "tipo": 'Forestal'
     }
-  ];
+];
+
+const tareas = [
+  {
+      "id": 1,
+      "type": "Primer Auxilio",
+      "description": "esta es la descripcion",
+      "capacity": 5,
+      "state": 0
+  },
+  {
+      "id": 2,
+      "type": "Cavar",
+      "description": "Esta es la descripción de una cavación",
+      "capacity": 1,
+      "state": 0
+  },
+  {
+      "id": 3,
+      "type": "Escalar",
+      "description": "Esta es la descripción de una escalada",
+      "capacity": 1,
+      "state": 0
+  },
+  {
+      "id": 4,
+      "type": "Trepar",
+      "description": "Esta es la descripción de una escalada",
+      "capacity": null,
+      "state": 0
+  }
+];
 
 export default new Vuex.Store({
   state: {
     regiones: regiones,//[{text: 'Selecciona tu región', value: null},'Hola','Como','estas']
-    emergencias: emergencias
+    emergencias: emergencias,
+    tareas: tareas
   },
   mutations: {
     llenarRegiones(state,regionesArchivo){
