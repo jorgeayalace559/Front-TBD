@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+<div>
     <Navbar/>
     <b-container class="mt-4 text-center">
           <b-row>

@@ -26,7 +26,7 @@ import VisualizarTarea from '@/components/VisualizarTarea.vue'
 export default {
   name: 'tarea',
   components: {
-    EditarTarea
+    VisualizarTarea
   }
 }
 </script>
