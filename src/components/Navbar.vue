@@ -8,10 +8,10 @@
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
               <b-nav-item :to="{name: 'emergencias'}">Emergencias</b-nav-item>
-              <b-dropdown :to="{name: 'tareas'}" text="Tareas">
-                <b-dropdown-item href="#">Tareas propuestas</b-dropdown-item>
-                <b-dropdown-item href="#">Mis tareas</b-dropdown-item>
-                <b-dropdown-item :to="{name: 'tareas'}">Crear Tarea</b-dropdown-item>
+              <b-dropdown text="tareas">
+                <b-dropdown-item :to="{name: 'tareas'}">Tareas propuestas</b-dropdown-item>
+                <b-dropdown-item :to="{name: 'mistareas'}">Mis tareas</b-dropdown-item>
+                <b-dropdown-item :to="{name: 'crear'}">Crear Tarea</b-dropdown-item>
               </b-dropdown>
             </b-navbar-nav>
 

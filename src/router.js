@@ -19,6 +19,17 @@ export default new Router({
     {
       path: '/tareas',
       name: 'tareas',
+      component: () => import(/* webpackChunkName: "about" */ './views/Tarea.vue')
+    },
+    {
+      path: '/mistareas',
+      name: 'mistareas',
+      component: () => import(/* webpackChunkName: "about" */ './views/MisTareas.vue')
+    },
+    {
+      path: '/creartarea',
+      name: 'crear',
+      component: () => import(/* webpackChunkName: "about" */ './views/CrearTarea.vue')
       component: () => import(/* webpackChunkName: "about" */ './views/Tarea.vue'),
       children: [
         {
