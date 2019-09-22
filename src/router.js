@@ -22,20 +22,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Tarea.vue')
     },
     {
-      path: '/mistareas',
-      name: 'mistareas',
-      component: () => import(/* webpackChunkName: "about" */ './views/MisTareas.vue')
-    },
-    {
       path: '/creartarea',
       name: 'crear',
-      component: () => import(/* webpackChunkName: "about" */ './views/CrearTarea.vue')
       component: () => import(/* webpackChunkName: "about" */ './views/Tarea.vue'),
       children: [
         {
           path: '/tareas/:id',
           name: 'task-details',
-          component: () => import(/* webpackChunkName: "about" */ './components/TareaUnica.vue'),
+          component: () => import(/* webpackChunkName: "about" */ './components/Task/TareaUnica.vue'),
           props: true
         }
       ]

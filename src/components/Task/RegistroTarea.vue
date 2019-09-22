@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import http from "../http-common";
+import http from "@/http-common";
 
 export default {
     data() {
@@ -77,6 +77,7 @@ export default {
             })
             .catch(e => {
             console.log(e);
+            alert("No has completado todos los campos");
             });
         },
     }

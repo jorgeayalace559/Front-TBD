@@ -68,94 +68,14 @@ const regiones = [{
   "comunas": ["Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "Santiago", "San Joaquín", "San Miguel", "San Ramón", "Vitacura", "Puente Alto", "Pirque", "San José de Maipo", "Colina", "Lampa", "Tiltil", "San Bernardo", "Buin", "Calera de Tango", "Paine", "Melipilla", "Alhué", "Curacaví", "María Pinto", "San Pedro", "Talagante", "El Monte", "Isla de Maipo", "Padre Hurtado", "Peñaflor"]
   }];
 
-const emergencias = [
-    {
-      "titulo": 'Incendion Forestal Valparaiso',
-      "descripcion": 'Gran incendio en valparaiso ocurrido por una colilla de cigarro',
-      "color": 'Rojo',
-      "region": 'Valparaíso',
-      "comuna": 'Valparaíso',
-      "calle": "San lorenzo",
-      "numeroCalle": 3585,
-      "estado": false,
-      "cantidadVoluntarios": 250,
-      "tipo": 'Incendio'
-    },
-    {
-      "titulo": 'Tsunami gigantesco',
-      "descripcion": 'Gran Tsunami afecta todo',
-      "color": 'Amarillo',
-      "region": 'Región del Biobío',
-      "comuna": 'Coronel',
-      "calle": "Alfonso Martinez",
-      "numeroCalle": 938,
-      "estado": false,
-      "cantidadVoluntarios": 120,
-      "tipo": 'Incendio'
-    },
-    {
-      "titulo": 'Forestación gigante',
-      "descripcion": 'Gran forestación deja todo en el camino',
-      "color": 'Verde',
-      "region": 'Tarapacá',
-      "comuna": 'Alto Hospicio',
-      "calle": "El barrial",
-      "numeroCalle": 127,
-      "estado": true,
-      "cantidadVoluntarios": 90,
-      "tipo": 'Forestal'
-    }
-];
-
-const tareas = [
-  {
-      "id": 1,
-      "type": "Primer Auxilio",
-      "description": "esta es la descripcion",
-      "capacity": 5,
-      "state": 0
-  },
-  {
-      "id": 2,
-      "type": "Cavar",
-      "description": "Esta es la descripción de una cavación",
-      "capacity": 1,
-      "state": 0
-  },
-  {
-      "id": 3,
-      "type": "Escalar",
-      "description": "Esta es la descripción de una escalada",
-      "capacity": 1,
-      "state": 0
-  },
-  {
-      "id": 4,
-      "type": "Trepar",
-      "description": "Esta es la descripción de una escalada",
-      "capacity": null,
-      "state": 0
-  }
-];
-
 export default new Vuex.Store({
   state: {
-    regiones: regiones,//[{text: 'Selecciona tu región', value: null},'Hola','Como','estas']
-    emergencias: emergencias,
-    tareas: tareas
+    regiones: regiones
   },
   mutations: {
-    llenarRegiones(state,regionesArchivo){
-      state.regiones = regionesArchivo;
-    }
+    
   },
   actions: {
-    obtenerRegiones : async function ({commit}) {
-      const data = await fetch('comunas.json');
-      console.log('Logre llegar aca');
-      const regiones = await data.json();
-      commit('llenarRegiones',regiones);
-      
-    }
+    
   }
 })
