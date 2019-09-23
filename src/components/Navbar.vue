@@ -7,12 +7,8 @@
 
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
-              <b-nav-item :to="{name: 'emergencias'}">Emergencias</b-nav-item>
-              <b-dropdown text="tareas">
-                <b-dropdown-item :to="{name: 'tareas'}">Tareas propuestas</b-dropdown-item>
-                <b-dropdown-item :to="{name: 'mistareas'}">Mis tareas</b-dropdown-item>
-                <b-dropdown-item :to="{name: 'crear'}">Crear Tarea</b-dropdown-item>
-              </b-dropdown>
+              <b-nav-item :to="{name: 'emergencies'}">Emergencias</b-nav-item>
+              <b-nav-item :to="{name: 'tareas'}">Tareas</b-nav-item>
             </b-navbar-nav>
 
             <!-- Right aligned nav items -->

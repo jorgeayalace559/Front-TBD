@@ -12,18 +12,21 @@ export default new Router({
       component: Home
     },
     {
-      path: '/emergencias',
-      name: 'emergencias',
-      component: () => import(/* webpackChunkName: "about" */ './views/Emergencia.vue')
+      path: '/emergencies',
+      name: 'emergencies',
+      component: () => import(/* webpackChunkName: "about" */ './views/Emergencia.vue'),
+      children: [
+        {
+          path: '/emergencies/:id',
+          name: 'emergency-details',
+          component: () => import(/* webpackChunkName: "about" */ './components/EmergenciaUnica.vue'),
+          props: true
+        }
+      ]
     },
     {
       path: '/tareas',
       name: 'tareas',
-      component: () => import(/* webpackChunkName: "about" */ './views/Tarea.vue')
-    },
-    {
-      path: '/creartarea',
-      name: 'crear',
       component: () => import(/* webpackChunkName: "about" */ './views/Tarea.vue'),
       children: [
         {

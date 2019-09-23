@@ -1,17 +1,13 @@
 <template>
     <div v-if="this.task">
-            <p>Tipo de tarea: {{this.task.type}}</p>
-            <p>Cantidad voluntarios: {{this.task.capacity}} </p>
-            <p>Descripcion de la tarea: {{this.task.description}}</p>
-            <p>Estado: {{this.task.state}}</p>
-            <b-row>
-                <b-col>    
-                    <b-button variant="danger">Rechazar</b-button>
-                </b-col>
-                <b-col>
-                    <b-button variant="success">Aceptar</b-button>
-                </b-col>
-            </b-row>
+      <b-card :title="task.type">
+        <b-card>
+          <p>{{this.task.description}}</p>
+        </b-card>
+        <br>
+        <b-button v-if="this.task.state === 0" variant="primary">Asignar tarea</b-button>&nbsp;&nbsp;&nbsp;
+        <b-button variant="danger" v-on:click="deleteTask()">Eliminar Tarea</b-button>
+      </b-card>
     </div>
 </template>
 
@@ -41,13 +37,13 @@ export default {
           console.log(e);
         });
     },
-    deleteCustomer() {
+    deleteTask() {
       http
-        .delete("/customer/" + this.customer.id)
+        .delete("/tasks/" + this.task.id)
         .then(response => {
           console.log(response.data);
           this.$emit("refreshData");
-          this.$router.push('/');
+          this.$router.push('/tareas');
         })
         .catch(e => {
           console.log(e);

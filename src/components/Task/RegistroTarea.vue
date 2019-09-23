@@ -64,11 +64,13 @@ export default {
             type: this.task.type,
             description: this.task.description,
             capacity: this.task.capacity,
-            state: this.task.state
+            state: this.task.state,
+            emergency: 1,
+            user: 1
         };
-    
+        console.log(data);
         http
-            .post("/tasks", data)
+            .post("/tasks/create", data)
             .then(response => {
             this.task.id = response.data.id;
             console.log(response.data);

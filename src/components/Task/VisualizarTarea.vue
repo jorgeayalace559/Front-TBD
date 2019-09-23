@@ -1,18 +1,27 @@
 <template>
     <div>
-        <b-card title="Tareas">
+        <b-card>
             <b-row>
                 <b-col cols="12" md="6">
                     <b-card title="Lista de tareas">
-                        <a v-for="(task, index) in tasks" :key="index">
+                        <b-list-group-item class="justify-content-between"  v-for="(task, index) in tasks" :key="index">
                             <router-link :to="{
                                     name: 'task-details',
                                     params: { task: task, id: task.id }
                                 }">
                                     {{task.type}}
                             </router-link>
-                        </a>                        
+                            <span class="badge badge-success badge-pill" v-if="task.state === 1">A</span>
+                            <span class="badge badge-danger badge-pill" v-else>N</span>
+                        </b-list-group-item>
                     </b-card>
+                    <a>Asignada
+                      <span class="badge badge-success badge-pill">A</span>
+                    </a>
+                    <a>&nbsp;&nbsp;&nbsp;No asignada
+                      <span class="badge badge-danger badge-pill">N</span>
+                    </a>
+                    
                 </b-col>
                 <b-col cols="12" md="6">
                         <router-view @refreshData="refreshList" ></router-view>
