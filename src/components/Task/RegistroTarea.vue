@@ -85,3 +85,12 @@ export default {
     }
 }
 </script>
+
+<style>
+
+.color{
+  border-block-color:  rgb(239,228,176)
+}
+ 
+
+</style>

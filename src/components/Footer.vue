@@ -1,8 +1,8 @@
 <template>
     <div>
-        <b-card>
+        <b-card class="footer" >
             <!-- Footer -->
-            <footer class="page-footer font-small blue-grey lighten-5">
+            <footer class="  page-footer font-small blue-grey lighten-5">
 
             <!-- Footer Links -->
             <div class="container text-center text-md-left mt-1">
@@ -102,3 +102,11 @@
         </b-card>
     </div>
 </template>
+<style>
+.footer{
+
+   background-image: url('../assets/foot.png');
+   font-size: 16px;
+};
+
+</style>

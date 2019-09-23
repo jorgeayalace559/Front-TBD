@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-navbar toggleable="lg" type="light" variant="light">
+        <b-navbar class="barra" toggleable="lg" type="light">
         <b-container>
           <b-navbar-brand :to="{name: 'home'}">TBD</b-navbar-brand>
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -30,3 +30,13 @@
       </b-navbar>
     </div>
 </template>
+
+<style>
+
+.barra{
+  background-color: #F7DC6F   !important;
+  font-size: 30px;
+  color:black;
+}
+
+</style>
