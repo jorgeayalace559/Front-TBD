@@ -6,26 +6,17 @@
             </p>
             <b-form>
                 <b-row>
-                    <b-col cols="12" md="6">
+                    <b-col>
                         <b-form-group v-model="task.type" id="input-group-3" label-for="input-3">
-                            <b-form-select
-                            id="input-3"
-                            v-model="task.type"
-                            :options="tipos"
-                            required
-                            ></b-form-select>
-                        </b-form-group>
+                        <b-form-select
+                        id="input-3"
+                        v-model="task.type"
+                        :options="tipos"
+                        required
+                        ></b-form-select>
+                    </b-form-group>
                     </b-col>
-                    <b-col cols="12" md="6">
-                        <b-form-group v-model="task.dimension" id="input-group-3" label-for="input-3">
-                            <b-form-select
-                            id="input-3"
-                            v-model="task.dimension"
-                            :options="dimensiones"
-                            required
-                            ></b-form-select>
-                        </b-form-group>
-                    </b-col>
+                    
                 </b-row>
                 <b-row>
                     <b-col cols="12" md="12">
@@ -48,12 +39,11 @@ export default {
             task: {
                 type: null,
                 description: '',
-                dimension: null,
                 capacity: 1,
                 state: 0
             },
             tipos: [{text: 'Tipo de tarea', value: null},'Primeros auxilios', 'Sacar escombro','Rescate','Atención personal'],
-            dimensiones: [{text: 'Dimensión', value: null},'Fuerza', 'Destreza','Liderazgo','Motivación','Conocimiento']
+            
         }
     },
 

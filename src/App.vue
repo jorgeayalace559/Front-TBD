@@ -29,14 +29,3 @@ export default {
   }
 }
 </script>
-<style>
-@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
-.fondo{
-   background-image: url('assets/amarillo.jpg');
-   font-family: 'Righteous', cursive !important; 
-}
-.barra{
-  background-color:#17A589;
-}
-
-</style>

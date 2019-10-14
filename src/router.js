@@ -33,7 +33,13 @@ export default new Router({
           path: '/tareas/:id',
           name: 'task-details',
           component: () => import(/* webpackChunkName: "about" */ './components/Task/TareaUnica.vue'),
-          props: true
+          props: true,
+          children: [{
+            path: '/tasks/:id/voluntary',
+            name: 'task-voluntary',
+            component: () => import(/* webpackChunkName: "about" */ './components/listaVoluntarios.vue'),
+            props: true
+          }]
         }
       ]
     }

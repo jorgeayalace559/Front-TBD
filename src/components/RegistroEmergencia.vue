@@ -25,7 +25,7 @@
                 </b-row>
                 <b-row class="mt-6">
                     <b-col cols="12" md="6">
-                        <b-form-group id="input-group-4" label-for="input-4">
+                        <b-form-group  id="input-group-4" label-for="input-4">
                             <b-form-select v-model="regionSeleccionada">
                             <option v-for="option in regiones" v-bind:value="option" :key="option.id">
                                 {{ option.region }}

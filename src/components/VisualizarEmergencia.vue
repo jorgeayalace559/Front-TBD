@@ -8,7 +8,7 @@
                             name: 'emergency-details',
                             params: { emergency: emergency, id: emergency.idEmergency }
                         }">
-                            {{emergency.type}}:{{emergency.description}}
+                            {{emergency.type}}:&nbsp;&nbsp;{{emergency.description}}
                     </router-link>
                     <span class="badge badge-success badge-pill" v-if="emergency.status === 1">A</span>
                     <span class="badge badge-danger badge-pill" v-else>N</span>

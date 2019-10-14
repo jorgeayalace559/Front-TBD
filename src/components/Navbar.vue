@@ -34,8 +34,8 @@
 <style>
 
 .barra{
-  background-color: #F7DC6F   !important;
-  font-size: 30px;
+  background-color: rgb(182, 214, 233)   !important;
+  font-size: 17px;
   color:black;
 }
 

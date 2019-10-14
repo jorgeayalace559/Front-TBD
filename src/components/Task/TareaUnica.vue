@@ -5,9 +5,15 @@
           <p>{{this.task.description}}</p>
         </b-card>
         <br>
-        <b-button v-if="this.task.state === 0" variant="primary">Asignar tarea</b-button>&nbsp;&nbsp;&nbsp;
+        <b-button v-if="this.task.state === 0"
+        :to="{
+                name: 'task-voluntary',
+                params: {task: task, id:task.id}
+                }"
+        variant="primary">Asignar tarea</b-button>&nbsp;&nbsp;&nbsp;
         <b-button variant="danger" v-on:click="deleteTask()">Eliminar Tarea</b-button>
       </b-card>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -19,19 +25,19 @@ export default {
   props: ["task"],
   methods: {
     /* eslint-disable no-console */
-    updateActive(status) {
+    updateTask(status) {
       var data = {
-        id: this.customer.id,
-        name: this.customer.name,
-        age: this.customer.age,
+        id: this.tasks.id,
+        name: this.tasks.name,
+        age: this.tasks.age,
         active: status
       };
  
       http
-        .put("/customer/" + this.customer.id, data)
+        .put("/tasks/" + this.customer.id, data)
         .then(response => {
-          this.customer.active = response.data.active;
           console.log(response.data);
+          console.log("Tarea actualizada con éxito");
         })
         .catch(e => {
           console.log(e);
