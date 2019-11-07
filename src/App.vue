@@ -9,8 +9,11 @@
               <b-col cols="12" md="4" class="mt-3">
                   <EmergenciasActuales/>
               </b-col>
-                  <google-map />
+              <b-col>
+                <l-map/>
+              </b-col>
           </b-row>
+
       </b-container> 
     <br>
     <Footer/>
@@ -22,15 +25,17 @@
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
 import EmergenciasActuales from './components/EmergenciasActuales.vue'
-
-import GoogleMap from "./components/GoogleMap";
+import {LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 
 export default {
   name: "App",
   components: {
-    GoogleMap,Navbar, Footer, EmergenciasActuales
+    Navbar, Footer, EmergenciasActuales,  LMap,
+        LTileLayer,
+        LMarker
   }
 };
+
 </script>
 
 <style>
